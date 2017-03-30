@@ -23,22 +23,16 @@ namespace Caesar
                 var Characters = userText.ToCharArray();
 
                 int key;
+                string Cripto;
 
                 for (int i = 0; i < Characters.Length; i++)
                 {
-                    char letter = Characters[i];
-                    letter = (char)(letter + kripKey);
-                    if (letter > 'z')
-                    {
-                        letter = (char)(letter - 26);
-                    }
-                    else if (letter < 'a')
-                    {
-                        letter = (char)(letter + 26);
-                    }
-                    Console.WriteLine(letter  + kripKey);
+                    key = Characters[i] + kripKey;
+                    Cripto = (key).ToString();
+                    Console.WriteLine(Cripto);
                 }
-               // Console.WriteLine(Characters);
+               
+
                 Console.ReadKey();
             }
             
