@@ -19,19 +19,27 @@ namespace Caesar
 
                 //Get users input for text to encript
                 Console.WriteLine("Enter text to be encripted");
-                string userText = Console.ReadLine();
+                string userText  = Console.ReadLine();
                 var Characters = userText.ToCharArray();
 
-                int key;
-                string Cripto;
+                string output = "";
 
                 for (int i = 0; i < Characters.Length; i++)
                 {
-                    key = Characters[i] + kripKey;
-                    Cripto = (key).ToString();
-                    Console.WriteLine(Cripto);
-                }
-               
+                    char character = Characters[i];
+
+                    character = (char)(character + kripKey);
+                    
+                    if (character > 'Z')
+                        character = (char)(character - 26);
+
+                    else if (character < 'A')
+                        character = (char)(character + 26);
+
+                    output += character;
+                }  
+
+                Console.WriteLine(output);
 
                 Console.ReadKey();
             }
